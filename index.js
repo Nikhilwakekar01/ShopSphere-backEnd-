@@ -13,7 +13,7 @@ const cors = require('cors');
 
 
 app.use(cors({
-  origin: 'https://shop-sphere-front-end-njlz.vercel.app/',
+  origin: 'http://localhost:5173, https://shop-sphere-front-end-njlz.vercel.app, https://shop-sphere-front-end-er3x.vercel.app',
   credentials: true
 }))
 
