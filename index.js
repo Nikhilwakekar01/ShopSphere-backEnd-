@@ -1,28 +1,28 @@
 const express = require('express')
 const app = express()
-const dotenv= require('dotenv');
-const connectDB =require('./config/shopDb')
+const dotenv = require('dotenv');
+const connectDB = require('./config/shopDb')
 dotenv.config();
 connectDB();
-const PORT= process.env.PORT
-const ProductRouter= require('./route/shopRoute');
+const PORT = process.env.PORT
+const ProductRouter = require('./route/shopRoute');
 const { register } = require('./controller/ShopController');
 const shopRoute = require('./route/shopRoute')
-const cors = require ('cors');
- 
+const cors = require('cors');
+
 
 
 app.use(cors({
-  origin:'http://localhost:5173',
-  credentials:true
+  origin: 'https://shop-sphere-front-end-njlz.vercel.app/',
+  credentials: true
 }))
 
 app.use(express.json());
-app.get('/',(req,res)=>{
-    
-    res.send('hello word ')
+app.get('/', (req, res) => {
+
+  res.send('hello word ')
 })
-app.use('/api',shopRoute); 
+app.use('/api', shopRoute);
 
 
 
